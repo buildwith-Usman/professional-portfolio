@@ -27,6 +27,8 @@ const nextConfig: NextConfig = {
     output: 'export',
     trailingSlash: true,
     distDir: 'dist',
+    basePath: '/professional-portfolio',
+    assetPrefix: '/professional-portfolio',
     images: {
       unoptimized: true
     },
