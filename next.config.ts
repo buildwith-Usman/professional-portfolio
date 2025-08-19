@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isStatic = process.env.BUILD_STATIC === 'true';
+
 const nextConfig: NextConfig = {
   /* config options here */
   typescript: {
@@ -20,6 +22,15 @@ const nextConfig: NextConfig = {
     // 构建时忽略ESLint错误
     ignoreDuringBuilds: true,
   },
+  // GitHub Pages deployment configuration
+  ...(isStatic && {
+    output: 'export',
+    trailingSlash: true,
+    distDir: 'dist',
+    images: {
+      unoptimized: true
+    },
+  }),
 };
 
 export default nextConfig;

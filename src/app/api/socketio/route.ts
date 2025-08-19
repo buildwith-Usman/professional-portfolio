@@ -3,6 +3,9 @@ import { Server as NetServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { setupSocket } from '@/lib/socket';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 let io: SocketIOServer;
 
 export async function GET(req: NextRequest) {
