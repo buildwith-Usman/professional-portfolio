@@ -22,13 +22,11 @@ const nextConfig: NextConfig = {
     // 构建时忽略ESLint错误
     ignoreDuringBuilds: true,
   },
-  // GitHub Pages deployment configuration
+  // Static export configuration for Netlify or other hosts
   ...(isStatic && {
     output: 'export',
     trailingSlash: true,
     distDir: 'dist',
-    basePath: '/professional-portfolio',
-    assetPrefix: '/professional-portfolio',
     images: {
       unoptimized: true
     },
